@@ -1,4 +1,4 @@
-name: CI - FastAPI Project
+name: CI - FastAPI ATV2
 
 on:
   push:
