@@ -1,12 +1,12 @@
-name: CI - AT1 T2
+name: CI - AT2 T2
 
 on:
   push:
     branches:
-      - tdd-item-api
+      - tdd-item-api-green
   pull_request:
     branches:
-      - tdd-item-api
+      - tdd-item-api-green
 
 jobs:
   test:
@@ -25,6 +25,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Rodar Black (formatação)
+        run: black --check .
+
+      - name: Rodar Flake8 (linting)
+        run: flake8 . 
 
       - name: Rodar os testes
         run: pytest -v
