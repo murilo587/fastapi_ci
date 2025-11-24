@@ -8,10 +8,12 @@ itens_db = [
     {"id": 2, "nome": "Item 2", "descricao": "Descrição do Item 2"},
 ]
 
+
 class Item(BaseModel):
     id: int
     nome: str
     descricao: str
+
 
 @app.get("/items/{item_id}")
 def buscar_item(item_id: int):
