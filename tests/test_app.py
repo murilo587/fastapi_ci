@@ -7,7 +7,11 @@ client = TestClient(app)
 def test_buscar_item_existente():
     response = client.get("/items/1")
     assert response.status_code == 200
-    assert response.json() == {"id": 1, "nome": "Item exemplo"}
+    assert response.json() == {
+        "id": 1,
+        "nome": "Item 1",
+        "descricao": "Descrição do Item 1",
+    }
 
 
 def test_buscar_item_inexistente():
