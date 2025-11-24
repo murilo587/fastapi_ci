@@ -1,7 +1,5 @@
-fastapi
-uvicorn
-pytest
-httpx
-flake8
-black
-pydantic[email]
+fastapi==0.95.0
+uvicorn==0.23.1
+pytest==7.4.0
+httpx==0.24.0
+pydantic[email]==1.10.6

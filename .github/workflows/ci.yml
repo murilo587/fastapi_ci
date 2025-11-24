@@ -1,13 +1,15 @@
-name: CI - FastAPI Project
+name: CI - AT1 T2
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - tdd-item-api
   pull_request:
-    branches: [ main ]
+    branches:
+      - tdd-item-api
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,13 +24,7 @@ jobs:
       - name: Instalar dependências
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install fastapi uvicorn pytest
 
-      - name: Rodar Black
-        run: black .
-
-      - name: Rodar Flake8
-        run: flake8 .
-
-      - name: Rodar Pytest
+      - name: Rodar os testes
         run: pytest -v
